@@ -3,6 +3,9 @@ import Header from "./component/Header";
 import "./app.scss";
 import Landing from "./container/Landing";
 import Footer from "./component/Footer";
+import Results from "./container/Results";
+import SingleResult from "./container/SingleResult";
+import About from "./container/About";
 
 function App() {
   return (
@@ -10,8 +13,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/results" element={<>Results page</>} />
-        <Route path="/results/:id" element={<>Single Result page</>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/results/:id" element={<SingleResult />} />
       </Routes>
       <Footer />
     </Router>

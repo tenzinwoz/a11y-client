@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ScanIcon from "../images/hero-ico.svg";
-import LoadIcon from "../images/button-scan.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -28,10 +27,13 @@ export default function Landing() {
     } else {
       try {
         setLoading(true);
-        const response = await axios.post("http://localhost:5050/api/a11y", {
-          url,
-          appName: websiteName,
-        });
+        const response = await axios.post(
+          "https://a11y-node-server.onrender.com/api/a11y",
+          {
+            url,
+            appName: websiteName,
+          }
+        );
         setLoading(false);
         navigate(`/results/${response?.data?.insertedId}`);
       } catch (error) {
@@ -41,8 +43,8 @@ export default function Landing() {
   };
   console.log({ errors });
   return (
-    <div className="a11y-landing grey-bg page-pad d-flex align-items-center">
-      <div className="container">
+    <div className="a11y-landing grey-bg page-pad">
+      <div className="container" style={{ height: "70vh" }}>
         <div className="text-center mb-5">
           <img src={ScanIcon} alt="Scan icon" />
           <h2 className="mt-4">
