@@ -75,7 +75,7 @@ export default function Landing() {
             </div>
 
             <div className="form-group mb-3">
-              <label htmlFor="websiteName">Your Name *</label>
+              <label htmlFor="websiteName">Website Name *</label>
               <input
                 type="text"
                 name="websiteName"
